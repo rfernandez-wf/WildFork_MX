@@ -1,0 +1,23 @@
+{
+	"name": "mx_general_stacct_lake2",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://stwffmxglobal01.dfs.core.windows.net/",
+			"accountKey": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "mx_keyvault_ls",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "mx-general-stacct"
+			}
+		},
+		"connectVia": {
+			"referenceName": "ManagedAutoResolveIntegrationRuntime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

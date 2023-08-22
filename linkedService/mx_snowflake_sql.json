@@ -1,0 +1,19 @@
+{
+	"name": "mx_snowflake_sql",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "Snowflake",
+		"typeProperties": {
+			"authenticationType": "Basic",
+			"connectionString": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "mx_keyvault_ls",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "mx-snowflake-sql"
+			}
+		}
+	}
+}

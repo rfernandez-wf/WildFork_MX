@@ -1,0 +1,28 @@
+{
+	"name": "mx_sap_qa_wsq",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SapTable",
+		"typeProperties": {
+			"clientId": "202",
+			"language": "EN",
+			"sncMode": false,
+			"userName": "SVC_ADF",
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "mx_keyvault_ls",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "us-sap-qa-srq202"
+			},
+			"server": "USTXRISWR50Q.global.corp.prod",
+			"systemNumber": "01"
+		},
+		"connectVia": {
+			"referenceName": "ir-mx-sap-qa",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

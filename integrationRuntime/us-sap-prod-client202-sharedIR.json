@@ -1,0 +1,12 @@
+{
+	"name": "us-sap-prod-client202-sharedIR",
+	"properties": {
+		"type": "SelfHosted",
+		"typeProperties": {
+			"linkedInfo": {
+				"resourceId": "/subscriptions/ca128a01-add6-4810-81ef-a2ff6edeae03/resourcegroups/RG_WFF_GlobalSnowflake_ADF/providers/Microsoft.DataFactory/factories/wff-adf-dev-eastus-001/integrationruntimes/us-sap-prod-client202",
+				"authorizationType": "Rbac"
+			}
+		}
+	}
+}
