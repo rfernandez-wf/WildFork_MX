@@ -1,0 +1,241 @@
+{
+	"name": "PL_CSV_TO_SNOWFLAKE_TEST",
+	"properties": {
+		"activities": [
+			{
+				"name": "TEST_COPY",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"additionalColumns": [
+							{
+								"name": "FILENAME",
+								"value": "$$FILEPATH"
+							}
+						],
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "SnowflakeSink",
+						"importSettings": {
+							"type": "SnowflakeImportCopyCommand"
+						}
+					},
+					"enableStaging": true,
+					"stagingSettings": {
+						"linkedServiceName": {
+							"referenceName": "mx_general_stacct_blob",
+							"type": "LinkedServiceReference"
+						},
+						"path": "ctsnowflake"
+					},
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "id",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "nombre",
+									"type": "String"
+								},
+								"sink": {
+									"name": "NOMBRE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Marca_de_equipo_instalado",
+									"type": "String"
+								},
+								"sink": {
+									"name": "MARCA_DE_EQUIPO_INSTALADO",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Modelo_de_equipo_instalado",
+									"type": "String"
+								},
+								"sink": {
+									"name": "MODELO_DE_EQUIPO_INSTALADO",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Cantidad_de_equipo_instalado",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CANTIDAD_DE_EQUIPO_INSTALADO",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Tiempo_Contrato",
+									"type": "String"
+								},
+								"sink": {
+									"name": "TIEMPO_CONTRATO",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Equipo_entregado_en",
+									"type": "String"
+								},
+								"sink": {
+									"name": "EQUIPO_ENTREGADO_EN",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Factura Total",
+									"type": "String"
+								},
+								"sink": {
+									"name": "FACTURA_TOTAL",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Coordenadas1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "COORDENADAS1",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Coordenadas2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "COORDENADAS2",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ZONA",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ZONA",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Meses contratado",
+									"type": "String"
+								},
+								"sink": {
+									"name": "MESES_CONTRATADO",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CANTIDAD FALLAS",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CANTIDAD_FALLAS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CHURN",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CHURN",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Centroid",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CENTROID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Prop Churn",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PROP_CHURN",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FILENAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "FILENAME",
+									"type": "String"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "DS_CSV_TEST",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DS_SNOWFLAKE_TEST",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}

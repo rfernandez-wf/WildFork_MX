@@ -1,0 +1,119 @@
+{
+	"name": "DS_SNOWFLAKE_TEST",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "mx_snowflake_dev",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SnowflakeTable",
+		"schema": [
+			{
+				"name": "ID",
+				"type": "VARCHAR",
+				"precision": 244,
+				"scale": 0
+			},
+			{
+				"name": "NOMBRE",
+				"type": "VARCHAR",
+				"precision": 244,
+				"scale": 0
+			},
+			{
+				"name": "MARCA_DE_EQUIPO_INSTALADO",
+				"type": "VARCHAR",
+				"precision": 244,
+				"scale": 0
+			},
+			{
+				"name": "MODELO_DE_EQUIPO_INSTALADO",
+				"type": "VARCHAR",
+				"precision": 244,
+				"scale": 0
+			},
+			{
+				"name": "CANTIDAD_DE_EQUIPO_INSTALADO",
+				"type": "VARCHAR",
+				"precision": 244,
+				"scale": 0
+			},
+			{
+				"name": "TIEMPO_CONTRATO",
+				"type": "VARCHAR",
+				"precision": 244,
+				"scale": 0
+			},
+			{
+				"name": "EQUIPO_ENTREGADO_EN",
+				"type": "VARCHAR",
+				"precision": 244,
+				"scale": 0
+			},
+			{
+				"name": "FACTURA_TOTAL",
+				"type": "VARCHAR",
+				"precision": 244,
+				"scale": 0
+			},
+			{
+				"name": "COORDENADAS1",
+				"type": "VARCHAR",
+				"precision": 244,
+				"scale": 0
+			},
+			{
+				"name": "COORDENADAS2",
+				"type": "VARCHAR",
+				"precision": 244,
+				"scale": 0
+			},
+			{
+				"name": "ZONA",
+				"type": "VARCHAR",
+				"precision": 244,
+				"scale": 0
+			},
+			{
+				"name": "MESES_CONTRATADO",
+				"type": "VARCHAR",
+				"precision": 244,
+				"scale": 0
+			},
+			{
+				"name": "CANTIDAD_FALLAS",
+				"type": "VARCHAR",
+				"precision": 244,
+				"scale": 0
+			},
+			{
+				"name": "CHURN",
+				"type": "VARCHAR",
+				"precision": 244,
+				"scale": 0
+			},
+			{
+				"name": "CENTROID",
+				"type": "VARCHAR",
+				"precision": 244,
+				"scale": 0
+			},
+			{
+				"name": "PROP_CHURN",
+				"type": "VARCHAR",
+				"precision": 244,
+				"scale": 0
+			},
+			{
+				"name": "FILENAME",
+				"type": "VARCHAR",
+				"precision": 244,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "STAGING_MX",
+			"table": "TEST_TABLE"
+		}
+	}
+}
