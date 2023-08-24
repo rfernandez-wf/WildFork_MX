@@ -41,7 +41,7 @@
 					"enableStaging": true,
 					"stagingSettings": {
 						"linkedServiceName": {
-							"referenceName": "mx_general_stacct_blob",
+							"referenceName": "mx_general_stacct_blob_dev",
 							"type": "LinkedServiceReference"
 						},
 						"path": "ctsnowflake"
@@ -224,7 +224,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DS_CSV_TEST",
+						"referenceName": "DS_CSV_TEST1",
 						"type": "DatasetReference"
 					}
 				],
